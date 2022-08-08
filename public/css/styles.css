@@ -11705,3 +11705,7 @@ body {
   width: 30px;
   margin-right: 3px;
 }
+
+#form-datos{
+  width: 50%;
+}

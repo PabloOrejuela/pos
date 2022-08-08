@@ -25,7 +25,7 @@ class Unidades extends BaseController {
     }
 
     public function editar($id) {
-        //PABLO estoy en video 2 1:04:55
+        //PABLO estoy en video 2 1:12:10
         echo $id;
     }
 
