@@ -24,13 +24,9 @@ class Unidades extends BaseController {
         return view('includes/template', $data);
     }
 
-    public function editar($id) {
-        //PABLO estoy en video 2 1:12:10
-        echo $id;
-    }
-
     public function eliminar($id) {
-        echo $id;
+        $this->unidadModel->delete($id);
+        return redirect()->to(site_url().'unidades');
     }
 
     public function nuevo() {
@@ -40,5 +36,35 @@ class Unidades extends BaseController {
             'main_content' => 'unidades/unidades_nuevo',
         ];
         return view('includes/template', $data);
+    }
+
+    public function insertar() {
+        
+        $this->unidadModel->save([
+            'unidad' => strtoupper($this->request->getPostGet('unidad')),
+            'nombre_corto' => $this->request->getPostGet('nombre_corto'),
+        ]);
+        return redirect()->to(site_url().'unidades');
+    }
+
+    public function editar($id) {
+
+        $unidad = $this->unidadModel->where('id', $id)->first();
+        $data = [
+            'title' => 'Editar unidad',
+            'main_content' => 'unidades/unidades_editar',
+            'unidad' => $unidad
+        ];
+        return view('includes/template', $data);
+    }
+
+    public function actualizar() {
+        
+        $this->unidadModel->save([
+            'id' => $this->request->getPostGet('id'),
+            'unidad' => strtoupper($this->request->getPostGet('unidad')),
+            'nombre_corto' => $this->request->getPostGet('nombre_corto'),
+        ]);
+        return redirect()->to(site_url().'unidades');
     }
 }

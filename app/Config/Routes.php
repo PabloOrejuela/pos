@@ -40,6 +40,8 @@ $routes->get('/', 'Home::index');
 $routes->get('/unidades', 'Unidades::index');
 $routes->get('unidades_editar/(:num)', 'Unidades::editar/$1');
 $routes->get('unidades_agregar', 'Unidades::nuevo');
+$routes->post('unidades_insertar', 'Unidades::insertar');
+$routes->post('unidades_actualizar', 'Unidades::actualizar');
 $routes->get('unidades_eliminar/(:num)', 'Unidades::eliminar/$1');
 
 /*
