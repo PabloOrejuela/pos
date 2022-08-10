@@ -24,6 +24,18 @@ class Unidades extends BaseController {
         return view('includes/template', $data);
     }
 
+    public function inactivos($estado = 0){
+        $unidades = $this->unidadModel->where('estado', $estado)->findAll();
+        //echo '<pre>'.var_export($unidades, true).'</pre>';
+
+        $data = [
+            'title' => 'Unidades',
+            'main_content' => 'unidades/unidades_inactivos_list',
+            'unidades' => $unidades
+        ];
+        return view('includes/template', $data);
+    }
+
     public function eliminar($id) {
         $this->unidadModel->delete($id);
         return redirect()->to(site_url().'unidades');
@@ -64,6 +76,24 @@ class Unidades extends BaseController {
             'id' => $this->request->getPostGet('id'),
             'unidad' => strtoupper($this->request->getPostGet('unidad')),
             'nombre_corto' => $this->request->getPostGet('nombre_corto'),
+        ]);
+        return redirect()->to(site_url().'unidades');
+    }
+
+    public function activar($id) {
+        
+        $this->unidadModel->save([
+            'id' => $id,
+            'estado' => 1,
+        ]);
+        return redirect()->to(site_url().'unidades');
+    }
+
+    public function desactivar($id) {
+        
+        $this->unidadModel->save([
+            'id' => $id,
+            'estado' => 0,
         ]);
         return redirect()->to(site_url().'unidades');
     }

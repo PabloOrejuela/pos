@@ -6,8 +6,7 @@
             </h3>
             <div>
                 <p>
-                    <a href="<?= site_url();?>unidades_agregar" class="btn btn-info">Agregar</a>
-                    <a href="<?= site_url();?>unidades_inactivos" class="btn btn-warning">Inactivos</a>
+                    <a href="<?= site_url();?>unidades" class="btn btn-warning">Unidades</a>
                 </p>
             </div>
             <div class="card-body">
@@ -19,7 +18,7 @@
                             <th>Abreviatura</th>
                             <th>Editar</th>
                             <th>Eliminar</th>
-                            <th>Desactivar</th>
+                            <th>Activar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,7 +39,7 @@
                                     </a>
                                     </td>';
                             echo '<td> 
-                                    <a href="'.site_url().'unidades_desactivar/'.$unidad->id.'" class="btn btn-secondary">
+                                    <a href="'.site_url().'unidades_activar/'.$unidad->id.'" class="btn btn-secondary">
                                         <i class="fa-solid fa-bolt-slash"></i></i>
                                     </a>
                                     </td>';

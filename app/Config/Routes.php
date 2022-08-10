@@ -38,7 +38,10 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 
 $routes->get('/unidades', 'Unidades::index');
+$routes->get('unidades_inactivos', 'Unidades::inactivos');
 $routes->get('unidades_editar/(:num)', 'Unidades::editar/$1');
+$routes->get('unidades_activar/(:num)', 'Unidades::activar/$1');
+$routes->get('unidades_desactivar/(:num)', 'Unidades::desactivar/$1');
 $routes->get('unidades_agregar', 'Unidades::nuevo');
 $routes->post('unidades_insertar', 'Unidades::insertar');
 $routes->post('unidades_actualizar', 'Unidades::actualizar');
