@@ -10,7 +10,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
 use App\Models\UnidadModel;
-
+use App\Models\CategoriaModel;
 /**
  * Class BaseController
  *
@@ -49,6 +49,7 @@ abstract class BaseController extends Controller {
         // Preload any models, libraries, etc, here.
         $this->db = \Config\Database::connect();
         $this->unidadModel = new UnidadModel($this->db);
+        $this->categoriaModel = new CategoriaModel($this->db);
 
         // E.g.: $this->session = \Config\Services::session();
         $this->session = \Config\Services::session();

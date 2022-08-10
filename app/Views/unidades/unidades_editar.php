@@ -7,7 +7,7 @@
             <form action="<?= site_url(); ?>unidades_actualizar" method="POST" autocomplete="off">
                 <div classs="form-group" id="form-datos">
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Nmbre</label>
+                        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
                         <input 
                             type="text" 
                             class="form-control" 

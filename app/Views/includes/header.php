@@ -59,7 +59,7 @@
                                         <nav class="sb-sidenav-menu-nested nav">
                                             <a class="nav-link" href="login.html">Productos</a>
                                             <a class="nav-link" href="<?= base_url();?>/unidades">Unidades</a>
-                                            <a class="nav-link" href="password.html">Categorías</a>
+                                            <a class="nav-link" href="<?= base_url();?>/categorias">Categorías</a>
                                         </nav>
                                     </div>
                                 </nav>

@@ -47,6 +47,16 @@ $routes->post('unidades_insertar', 'Unidades::insertar');
 $routes->post('unidades_actualizar', 'Unidades::actualizar');
 $routes->get('unidades_eliminar/(:num)', 'Unidades::eliminar/$1');
 
+$routes->get('/categorias', 'Categoria::index');
+$routes->get('categorias_agregar', 'Categoria::nuevo');
+$routes->post('categorias_insertar', 'Categoria::insertar');
+$routes->get('categorias_editar/(:num)', 'Categoria::editar/$1');
+$routes->get('categorias_activar/(:num)', 'Categoria::activar/$1');
+$routes->get('categorias_desactivar/(:num)', 'Categoria::desactivar/$1');
+$routes->get('categorias_inactivos', 'Categoria::inactivos');
+$routes->post('categorias_actualizar', 'Categoria::actualizar');
+$routes->get('categorias_eliminar/(:num)', 'Categoria::eliminar/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
