@@ -41,4 +41,41 @@ class Validation extends BaseConfig
     //--------------------------------------------------------------------
     // Rules
     //--------------------------------------------------------------------
+    public $login = [
+        'user'  => 'required',
+        'password'   => 'required',
+    ];
+
+    public $login_errors = [
+        'user' => [
+            'required' => 'El campo "Usuario" es obligatorio',
+        ],
+        'password' => [
+            'required' => 'El campo "Contraseña" es obligatorio',
+        ]
+    ];
+
+    public $unidadesInsert = [
+        'unidad'  => 'required',
+        'nombre_corto'   => 'required',
+    ];
+
+    public $unidadesInsert_errors = [
+        'unidad' => [
+            'required' => 'El campo "Unidad" es obligatorio',
+        ],
+        'nombre_corto' => [
+            'required' => 'El campo "Abreviatura" es obligatorio',
+        ]
+    ];
+
+    public $categorias = [
+        'cat_nombre'  => 'required',
+    ];
+
+    public $categorias_errors = [
+        'cat_nombre' => [
+            'required' => 'El campo "Categoría" es obligatorio',
+        ],
+    ];
 }

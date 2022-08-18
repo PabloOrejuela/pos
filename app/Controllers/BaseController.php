@@ -29,6 +29,7 @@ abstract class BaseController extends Controller {
      */
     protected $request;
     protected $CI_VERSION = \CodeIgniter\CodeIgniter::CI_VERSION;
+    public $session = null;
 
     /**
      * An array of helpers to be loaded automatically upon
@@ -38,6 +39,8 @@ abstract class BaseController extends Controller {
      * @var array
      */
     protected $helpers = ['form'];
+
+    //PABLO estoy video3, 37:42
 
     /**
      * Constructor.

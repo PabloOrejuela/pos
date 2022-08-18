@@ -8,10 +8,6 @@ class Unidades extends BaseController {
 
     protected $unidades;
 
-    // public function __construct(){
-    //     $this->unidades = $this->unidadModel();
-    // }
-
     public function index($estado = 1){
         $unidades = $this->unidadModel->where('estado', $estado)->findAll();
         //echo '<pre>'.var_export($unidades, true).'</pre>';
@@ -51,12 +47,20 @@ class Unidades extends BaseController {
     }
 
     public function insertar() {
+
+        $this->validation->setRuleGroup('unidadesInsert');
+        if (!$this->validation->withRequest($this->request)->run()) {
+            //Depuración
+            //dd($validation->getErrors());
+            return redirect()->back()->withInput()->with('errors', $this->validation->getErrors());
+        }else{
         
-        $this->unidadModel->save([
-            'unidad' => strtoupper($this->request->getPostGet('unidad')),
-            'nombre_corto' => $this->request->getPostGet('nombre_corto'),
-        ]);
-        return redirect()->to(site_url().'unidades');
+            $this->unidadModel->save([
+                'unidad' => strtoupper($this->request->getPostGet('unidad')),
+                'nombre_corto' => $this->request->getPostGet('nombre_corto'),
+            ]);
+            return redirect()->to(site_url().'unidades');
+        }
     }
 
     public function editar($id) {

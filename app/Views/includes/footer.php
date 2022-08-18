@@ -14,7 +14,14 @@
         </div>
         <script src="<?= site_url(); ?>public/js/bootstrap.bundle.min.js" ></script>
         <script src="<?= site_url(); ?>public/js/scripts.js"></script>
+        <script src="<?= site_url(); ?>public/js/jquery-3.6.js"></script>
         <script src="<?= site_url(); ?>public/js/simple-datatables@latest.js" crossorigin="anonymous"></script>
         <script src="<?= site_url(); ?>public/js/datatables-simple-demo.js"></script>
+        
+        <script type="text/javascript">
+            $("#modal-confirma").on("show.bs.modal", function(e){
+                $(this).find(".btn-ok").attr("href", $(e.relatedTarget).data("href"));
+            });
+        </script>
     </body>
 </html>
